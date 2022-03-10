@@ -115,6 +115,12 @@
             width: 100%;
             justify-content: space-between;
         }
+
+        #yearLabel {
+            color: #990000;
+            font-size: 0.8em;
+            display: inline-block;
+        }
         /* 
 /*----- Styling the sliders ----
 

@@ -48,7 +48,7 @@ function validateForm() {
 
 function addEventListeners() {
     document.getElementById("savings-input").addEventListener("input", () => {
-        syncYearInputs()
+        syncSliderWithInput()
         if (validateForm()) {
             handleValues()
         } else {
@@ -59,7 +59,8 @@ function addEventListeners() {
 
 
     document.getElementById("loan-period").addEventListener("input", () => {
-        syncYearInputs()
+        syncSliderWithInput()
+        syncInputWithSlider()
         if (validateForm()) {
             handleValues()
         } else {
@@ -69,16 +70,6 @@ function addEventListeners() {
 
     })
 
-    //TODO: disable input between 2000 and 2021
-    document.getElementById("year-input").addEventListener("input", () => {
-        syncYearInputs()
-        if (validateForm()) {
-            handleValues()
-        } else {
-            document.getElementById("lost-money").innerHTML = "Unable to calculate"
-            document.getElementById("current-money").innerHTML = "Unable to calculate"
-        }
-    })
 }
 
 function handleValues() {
@@ -103,10 +94,28 @@ function handleValues() {
     formatCalculatedData();
 }
 
-function syncYearInputs() {
+function syncSliderWithInput() {
     document.getElementById("year-input").value = document.getElementById("loan-period").value
     document.getElementById("loan-period").value = document.getElementById("year-input").value
 }
+
+function syncInputWithSlider(){
+    let year = document.getElementById("year-input").value
+    if(year >= 2000 && year <= 2021)
+    {
+        document.getElementById("yearLabel").innerHTML = "";
+        document.getElementById("loan-period").value = year;
+        handleValues()
+    }
+    else
+    {
+        document.getElementById("yearLabel").innerHTML = "Please enter a year <br>between 2000 <br>and 2021";
+        document.getElementById("lost-money").innerHTML = "Unable to calculate"
+        document.getElementById("current-money").innerHTML = "Unable to calculate"
+    }
+    updateSliderStyles()
+}
+
 
 //TODO: rename loan-period id to year-slider
 function setDefaultValues() {

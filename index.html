@@ -38,8 +38,8 @@
                                 auf Ihrem Sparkonto seit (Jahr)
                             </span></div>
                         <span>
-                                <input id="year-input" type="text" class="input-control" required>
-                                <br><label for="year-input"></label>
+                                <input id="year-input" type="text" class="input-control" onfocusout="syncInputWithSlider()" required>
+                                <br><label id="yearLabel" for="year-input"></label>
                             </span>
                     </div>
                     <input type="range" id="loan-period" min="2000" max="2021" step="1">
