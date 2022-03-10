@@ -69,6 +69,11 @@
           height: max-content;
       }
       
+      .breakup {
+          font-weight: lighter;
+          font-size: 14px;
+      }
+      
       .view,
       .breakup {
           width: 45%;
@@ -371,7 +376,7 @@
           }
           #lost-money,
           #current-money {
-              min-width: 54px;
+              min-width: 64px;
           }
           .breakup p {
               margin-bottom: 10px;
