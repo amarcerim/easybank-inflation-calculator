@@ -331,6 +331,9 @@
           .footer {
               display: flex;
           }
+          .range-text {
+              margin-top: -7px;
+          }
       }
       
       @media only screen and (min-width: 386px) and (max-width: 768px) {
@@ -382,6 +385,9 @@
           .breakup p {
               margin-bottom: 10px;
           }
+          .range-text {
+              margin-top: -7px;
+          }
       }
       
       @media only screen and (min-width: 769px) and (max-width:1175px) {
@@ -404,5 +410,8 @@
           }
           .details {
               height: 175px;
+          }
+          .range-text {
+              margin-top: -7px;
           }
       }
