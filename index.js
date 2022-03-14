@@ -53,7 +53,7 @@ function addEventListeners() {
             handleValues()
         } else {
             document.getElementById("lost-money").innerHTML = "Unable to calculate"
-            document.getElementById("current-money").innerHTML = "Unable to calculate"
+            document.getElementByI.<d("current-money").innerHTML = "Unable to calculate"
         }
     })
 
