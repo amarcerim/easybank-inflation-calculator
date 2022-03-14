@@ -54,9 +54,10 @@
         .view,
         .breakup {
             width: 45%;
-            color: #666666;
+            color: #4b4b4b;
+            
         }
-        
+
         .details {
             background: #ffffff;
             padding: 30px;
@@ -115,7 +116,7 @@
         }
         
         #current-money {
-            color: #383838;
+            color: #4b4b4b;
             padding: 5px;
             margin-top: 45px;
         }
@@ -380,7 +381,7 @@
       @font-face {
           font-family: 'DINPro';
           font-style: normal;
-          font-weight: 300;
+          font-weight: 500;
           src: local('DINPro'), url('https://fonts.cdnfonts.com/s/18774/DINPro-Light tr.woff') format('woff');
       }
       
@@ -456,7 +457,7 @@
       .view,
       .breakup {
           width: 45%;
-          color: #666666;
+          color: #4b4b4b;
       }
       
       
@@ -640,6 +641,7 @@
           }
           .breakup {
               width: 100%;
+              font-weight: bolder;
               margin-top: -30px;
           }
           #current-money-text {

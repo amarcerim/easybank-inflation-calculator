@@ -28,7 +28,7 @@ function updateSliderStyles() {
     const min = slider.min
     const max = slider.max
     const value = slider.value
-    slider.style.background = `linear-gradient(to right, #84B816 0%, #84B816 ${(value - min) / (max - min) * 100}%, #DEE2E6 ${(value - min) / (max - min) * 100}%, #DEE2E6 100%)`
+    slider.style.background = `linear-gradient(to right, #84B816 0%, #84B816 ${(value - min) / (max - min) * 100}%, #CDCDCD ${(value - min) / (max - min) * 100}%, #CDCDCD 100%)`
     slider.style.borderRadius = "10px"
     slider.style.height = "9px"
     slider.oninput = function() {
