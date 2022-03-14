@@ -12,14 +12,9 @@
             text-align: right;
         }
         
-        h3 {
-            font-size: 40px;
-            color: #4b4b4b;
-            width: 700px;
-            font-weight: lighter;
-            letter-spacing: -1px;
+        h2 {
+            letter-spacing: 0.01rem;
         }
-        
         .container {
             height: 100%;
             width: 75%;
