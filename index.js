@@ -101,15 +101,21 @@ function syncSliderWithInput() {
 
 function syncInputWithSlider(){
     let year = document.getElementById("year-input").value
-    if(year >= 2000 && year <= 2021)
+    let isYearValid = document.getElementById("year-input").validity.valid
+    if(year >= 2000 && year <= 2021 && isYearValid)
     {
         document.getElementById("yearLabel").innerHTML = "";
         document.getElementById("year-slider").value = year;
         handleValues()
     }
-    else
+    else if(year < 2000 || year > 2021)
     {
-        document.getElementById("yearLabel").innerHTML = "Please enter a year <br>between 2000 <br>and 2021";
+        if(year != ""){
+            document.getElementById("yearLabel").innerHTML = "Please enter a year <br>between 2000 <br>and 2021";
+        }
+        else{
+            document.getElementById("yearLabel").innerHTML = "";
+        }
         document.getElementById("lost-money").innerHTML = "Unable to calculate"
         document.getElementById("current-money").innerHTML = "Unable to calculate"
     }
