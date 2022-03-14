@@ -68,7 +68,7 @@
             height: 160px;
             border-radius: 4px;
             color: #4b4b4b;
-            border: 1px solid rgba(153, 153, 153, 0.1);
+            border: 1px 1px 0px 1px solid rgba(153, 153, 153, 0.1);
         }
         
         .details input {
@@ -85,18 +85,7 @@
             flex-direction: row;
             padding-bottom: 10px;
         }
-        
-        .footer-container {
-            height: 150px;
-            background: #ffffff;
-            border-radius: 4px;
-            margin-top: 2%;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            color: #4b4b4b;
-            border: 1px solid rgba(153, 153, 153, 0.1);
-        }
+   
         
         .footer {
             display: flex;
@@ -110,7 +99,7 @@
         
         .range-text {
             display: flex;
-            font-size: 10px;
+            font-size: 12px;
             margin-top: -5px;
             width: 100%;
             justify-content: space-between;
@@ -171,7 +160,7 @@
         
         #year-slider {
             -webkit-appearance: none;
-            margin: 10px 0;
+            margin: 20px 0;
             width: 100%;
             border: none;
             padding: 0px;
@@ -475,14 +464,7 @@
           color: #666666;
       }
       
-      .details {
-          background: #ffffff;
-          padding: 30px;
-          height: 160px;
-          border-radius: 4px;
-          color: #4b4b4b;
-          border: 1px solid rgba(153, 153, 153, 0.1);
-      }
+      
       
       .details input {
           width: 100%;
@@ -503,12 +485,11 @@
           height: 150px;
           background: #ffffff;
           border-radius: 4px;
-          margin-top: 2%;
           display: flex;
           flex-direction: column;
           justify-content: flex-start;
           color: #4b4b4b;
-          border: 1px solid rgba(153, 153, 153, 0.1);
+          border: 0px 1px 1px 1px solid rgba(153, 153, 153, 0.1);
       }
       
       .footer {
@@ -523,7 +504,7 @@
       
       .range-text {
           display: flex;
-          font-size: 10px;
+          font-size: 12px;
           margin-top: -13px;
           width: 100%;
           font-family: 'DINPro';
@@ -575,15 +556,6 @@
           height: 30px !important;
           margin-top: -20px;
           margin-bottom: 10px;
-      }
-      
-      #year-slider {
-          -webkit-appearance: none;
-          margin: 10px 0;
-          width: 100%;
-          border: none;
-          padding: 0px;
-          -webkit-appearance: none;
       }
       
       input[type=range]::-moz-range-thumb {

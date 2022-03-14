@@ -139,15 +139,15 @@ function formatInputData() {
         document.getElementById("savings-input").value = Math.floor(document.getElementById("savings-input").value)
     }
     var formattedData = numeral(document.getElementById("savings-input").value).format('0,0');
-    document.getElementById("savings-input").value = formattedData + " €";
+    document.getElementById("savings-input").value = formattedData + " EUR";
 }
 
 function formatCalculatedData() {
     var formattedLostMoney = numeral(document.getElementById("lost-money").innerHTML).format('0,0.00');
-    document.getElementById("lost-money").innerHTML = formattedLostMoney + " €";
+    document.getElementById("lost-money").innerHTML = formattedLostMoney + " EUR";
 
     var formattedCurrentMoney = numeral(document.getElementById("current-money").innerHTML).format('0,0.00');
-    document.getElementById("current-money").innerHTML = formattedCurrentMoney + " €";
+    document.getElementById("current-money").innerHTML = formattedCurrentMoney + " EUR";
 }
 
 setDefaultValues()
