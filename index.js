@@ -1,26 +1,26 @@
 var inflationData = {
-    "2000": 2.3,
-    "2001": 2.7,
-    "2002": 1.8,
-    "2003": 1.3,
-    "2004": 2.1,
-    "2005": 2.3,
-    "2006": 1.5,
-    "2007": 2.2,
-    "2008": 3.2,
-    "2009": 0.5,
-    "2010": 1.9,
-    "2011": 3.3,
-    "2012": 2.4,
-    "2013": 2.0,
-    "2014": 1.7,
-    "2015": 0.9,
-    "2016": 0.9,
-    "2017": 2.1,
-    "2018": 2.0,
-    "2019": 1.5,
-    "2020": 1.4,
-    "2021": 2.8
+    "2000": 100.0,
+    "2001": 102.7,
+    "2002": 104.5,
+    "2003": 105.9,
+    "2004": 108.1,
+    "2005": 110.6,
+    "2006": 112.2,
+    "2007": 114.6,
+    "2008": 118.3,
+    "2009": 118.9,
+    "2010": 121.1,
+    "2011": 125.0,
+    "2012": 128.2,
+    "2013": 130.7,
+    "2014": 132.8,
+    "2015": 134.0,
+    "2016": 135.2,
+    "2017": 138.0,
+    "2018": 140.8,
+    "2019": 142.9,
+    "2020": 145.0,
+    "2021": 149.0
 }
 
 function updateSliderStyles() {
@@ -73,23 +73,15 @@ function addEventListeners() {
 }
 
 function handleValues() {
-    let iterationKey = numeral(document.getElementById("year-slider").value).value();
-    let lostAmount;
-    let sumOfLostAmount = 0;
-    let currentAmount = numeral(document.getElementById("savings-input").value).value();
+    let selectedYear = numeral(document.getElementById("year-slider").value).value();
+    let savings = numeral(document.getElementById("savings-input").value).value();
+    let inflation = ((inflationData[2021] / inflationData[selectedYear]) * 100 - 100 ) / 100;
+    let purchasingPowerToday = savings * (1 - inflation);
+    let purchasingPowerLoss = savings - purchasingPowerToday;
+    console.log(purchasingPowerToday);
 
-
-    do {
-        lostAmount = (inflationData[iterationKey] * currentAmount) / 100
-        currentAmount = currentAmount - lostAmount
-        sumOfLostAmount += lostAmount;
-        iterationKey++
-    }
-    while (iterationKey < 2022)
-    lostAmount = lostAmount.toFixed(2)
-    currentAmount = currentAmount.toFixed(2)
-    document.getElementById("lost-money").innerHTML = sumOfLostAmount.toFixed(2);
-    document.getElementById("current-money").innerHTML = currentAmount;
+    document.getElementById("lost-money").innerHTML = purchasingPowerLoss.toFixed(2);
+    document.getElementById("current-money").innerHTML = purchasingPowerToday;
 
     formatCalculatedData();
 }
