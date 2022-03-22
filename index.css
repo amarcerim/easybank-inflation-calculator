@@ -216,25 +216,26 @@
         }
         
         #savings-input:invalid~label::after {
-            content: "Required Field";
+            content: "Dieses Feld wird\A benötigt";
+            white-space: pre;
+            word-wrap: break-word;
             color: #990000;
             font-size: 0.8em;
         }
         
         #savings-input:valid~label::after {
             content: "";
-            font-size: 0.8em;
         }
         
         #year-input:invalid~label::after {
-            content: "Required Field";
+            content: "Dieses Feld wird\A benötigt";
+            white-space: pre;
             color: #990000;
-            font-size: 0.8em;
+            font-size: 1em;
         }
         
         #year-input:valid~label::after {
             content: "";
-            font-size: 0.8em;
         }
         
         @media only screen and (max-width:385px) {

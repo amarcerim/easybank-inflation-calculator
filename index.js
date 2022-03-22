@@ -52,8 +52,8 @@ function addEventListeners() {
         if (validateForm()) {
             handleValues()
         } else {
-            document.getElementById("lost-money").innerHTML = "Unable to calculate"
-            document.getElementById("current-money").innerHTML = "Unable to calculate"
+            document.getElementById("lost-money").innerHTML = "0 EUR"
+            document.getElementById("current-money").innerHTML = "0 EUR"
         }
     })
 
@@ -64,8 +64,8 @@ function addEventListeners() {
         if (validateForm()) {
             handleValues()
         } else {
-            document.getElementById("lost-money").innerHTML = "Unable to calculate"
-            document.getElementById("current-money").innerHTML = "Unable to calculate"
+            document.getElementById("lost-money").innerHTML = "0 EUR"
+            document.getElementById("current-money").innerHTML = "0 EUR"
         }
 
     })
@@ -78,7 +78,6 @@ function handleValues() {
     let inflation = ((inflationData[2021] / inflationData[selectedYear]) * 100 - 100 ) / 100;
     let purchasingPowerToday = savings * (1 - inflation);
     let purchasingPowerLoss = savings - purchasingPowerToday;
-    console.log(purchasingPowerToday);
 
     document.getElementById("lost-money").innerHTML = purchasingPowerLoss.toFixed(2);
     document.getElementById("current-money").innerHTML = purchasingPowerToday;
@@ -100,16 +99,16 @@ function syncInputWithSlider(){
         document.getElementById("year-slider").value = year;
         handleValues()
     }
-    else if(year < 2000 || year > 2021)
+    else if(year < 2000 || year > 2021 || isNaN(year))
     {
         if(year != ""){
-            document.getElementById("yearLabel").innerHTML = "Please enter a year <br>between 2000 <br>and 2021";
+            document.getElementById("yearLabel").innerHTML = "Bitte geben Sie ein <br> Jahr zwischen 2000 <br> und  2021 ein";
         }
         else{
             document.getElementById("yearLabel").innerHTML = "";
         }
-        document.getElementById("lost-money").innerHTML = "Unable to calculate"
-        document.getElementById("current-money").innerHTML = "Unable to calculate"
+        document.getElementById("lost-money").innerHTML = "0 EUR"
+        document.getElementById("current-money").innerHTML = "0 EUR"
     }
     updateSliderStyles()
 }
