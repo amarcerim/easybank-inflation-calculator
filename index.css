@@ -96,12 +96,18 @@
         .range-text {
             display: flex;
             font-size: 12px;
-            margin-top: -5px;
+            margin-top: -23px;
             width: 100%;
             justify-content: space-between;
         }
 
         #yearLabel {
+            color: #990000;
+            font-size: 0.8em;
+            display: inline-block;
+        }
+
+        #savingsLabel {
             color: #990000;
             font-size: 0.8em;
             display: inline-block;
@@ -216,11 +222,10 @@
         }
         
         #savings-input:invalid~label::after {
-            content: "Dieses Feld wird\A benötigt";
+            content: "Bitte geben Sie einen\A Betrag und das\A Jahr ein";
             white-space: pre;
-            word-wrap: break-word;
             color: #990000;
-            font-size: 0.8em;
+            font-size: 1em;
         }
         
         #savings-input:valid~label::after {
@@ -228,7 +233,7 @@
         }
         
         #year-input:invalid~label::after {
-            content: "Dieses Feld wird\A benötigt";
+            content: "Bitte geben Sie einen\A Betrag und das\A Jahr ein";
             white-space: pre;
             color: #990000;
             font-size: 1em;
@@ -502,7 +507,7 @@
       .range-text {
           display: flex;
           font-size: 12px;
-          margin-top: -13px;
+          margin-top: -30px;
           width: 100%;
           font-family: 'DINPro';
           justify-content: space-between;
@@ -676,7 +681,7 @@
               display: flex;
           }
           .range-text {
-              margin-top: -7px;
+              margin-top: -20px;
           }
       }
       
@@ -730,7 +735,7 @@
               margin-bottom: 10px;
           }
           .range-text {
-              margin-top: -7px;
+              margin-top: -20px;
           }
       }
       
@@ -756,6 +761,6 @@
               height: 205px;
           }
           .range-text {
-              margin-top: -7px;
+              margin-top: -20px;
           }
       }
