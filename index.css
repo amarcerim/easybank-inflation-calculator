@@ -50,6 +50,10 @@
         .header button:hover {
             cursor: pointer;
         }
+
+        .view {
+            background-color: #FFFFFF;
+        }
         
         .view,
         .breakup {
@@ -96,7 +100,6 @@
         .range-text {
             display: flex;
             font-size: 12px;
-            margin-top: -23px;
             width: 100%;
             justify-content: space-between;
         }
@@ -484,6 +487,7 @@
       }
       
       .footer-container {
+          margin: 20px 0px;
           height: 150px;
           background: #ffffff;
           border-radius: 4px;
@@ -507,8 +511,8 @@
       .range-text {
           display: flex;
           font-size: 12px;
-          margin-top: -30px;
           width: 100%;
+          margin-top: -20px;
           font-family: 'DINPro';
           justify-content: space-between;
       }
@@ -681,7 +685,7 @@
               display: flex;
           }
           .range-text {
-              margin-top: -20px;
+              margin-top: -10px;
           }
       }
       
@@ -735,7 +739,7 @@
               margin-bottom: 10px;
           }
           .range-text {
-              margin-top: -20px;
+            margin-top: -10px;
           }
       }
       
@@ -761,6 +765,6 @@
               height: 205px;
           }
           .range-text {
-              margin-top: -20px;
+              margin-top: -10px;
           }
       }

@@ -23,6 +23,18 @@ var inflationData = {
     "2021": 149.0
 }
 
+var years = Object.keys(inflationData);
+var lastYear = years[years.length - 1];
+
+
+addLastYear()
+
+function addLastYear() {
+    document.getElementById("last-range-year").innerHTML = lastYear;
+    document.getElementById("year-slider").max = lastYear;
+    document.getElementById	("real-data-text").innerHTML = "Bei der Berechnung wurde die tatsächliche Inflation in Österreich in den Jahren 2000 bis " + (lastYear-1) + " laut Verbraucherpreisindex berücksichtigt."
+}
+
 function updateSliderStyles() {
     const slider = document.getElementById("year-slider")
     const min = slider.min
@@ -75,7 +87,7 @@ function addEventListeners() {
 function handleValues() {
     let selectedYear = numeral(document.getElementById("year-slider").value).value();
     let savings = numeral(document.getElementById("savings-input").value).value();
-    let inflation = ((inflationData[2021] / inflationData[selectedYear]) * 100 - 100 ) / 100;
+    let inflation = ((inflationData[lastYear] / inflationData[selectedYear]) * 100 - 100 ) / 100;
     let purchasingPowerToday = savings * (1 - inflation);
     let purchasingPowerLoss = savings - purchasingPowerToday;
 
@@ -93,16 +105,16 @@ function syncSliderWithInput() {
 function syncInputWithSlider(){
     let year = document.getElementById("year-input").value
     let isYearValid = document.getElementById("year-input").validity.valid
-    if(year >= 2000 && year <= 2021 && isYearValid)
+    if(year >= 2000 && year <= lastYear && isYearValid)
     {
         document.getElementById("yearLabel").innerHTML = "";
         document.getElementById("year-slider").value = year;
         handleValues()
     }
-    else if(year < 2000 || year > 2021 || isNaN(year))
+    else if(year < 2000 || year > lastYear || isNaN(year))
     {
         if(year != ""){
-            document.getElementById("yearLabel").innerHTML = "Bitte geben Sie ein <br> Jahr zwischen 2000 <br> und  2021 ein";
+            document.getElementById("yearLabel").innerHTML = "Bitte geben Sie ein <br> Jahr zwischen 2000 <br> und " + lastYear + " ein";
         }
         else{
             document.getElementById("yearLabel").innerHTML = "";
