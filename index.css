@@ -55,6 +55,10 @@
             background-color: #FFFFFF;
         }
         
+        #real-data-text {
+            letter-spacing: 0.01rem;
+        }
+
         .view,
         .breakup {
             width: 45%;
