@@ -34,10 +34,10 @@ function loadEasybank() {
 function loadSite() {
   var url = window.location.href; 
   switch(url){
-    case 'https://bawag-inflation-calculator.netlify.app/':
+    case url.includes('bawag-inflation-calculator.netlify.app/'):
     loadBawag()
     break;
-    case 'https://easybank-inflation-calculator.netlify.app/':
+    case url.includes('easybank-inflation-calculator.netlify.app/'):
     loadEasybank()
     break;
   }
