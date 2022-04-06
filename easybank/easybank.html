@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inflation Calculator</title>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Berechnen Sie, wie viel man durch Inflation verliert:</h2>
+        <div class="sub-container">
+            <div class="view">
+                <div class="details">
+                    <div class="detail">
+                        <div class="erspartes">
+                            <span>
+                            Ihr Erspartes in Euro*
+                        </span></div>
+                        <span>
+                            <input id="savings-input" type="text" class="input-control" onfocusout="formatInputData()" required>
+                            <br><label id="savingsLabel" for="savings-input"></label>
+                        </span>
+                    </div>
+                    <div class="detail">
+                        <div class="sparkonto">
+                            <span>
+                                auf Ihrem Sparkonto seit (Jahr)
+                            </span></div>
+                        <span>
+                                <input id="year-input" type="text" class="input-control" oninput="syncInputWithSlider()" required>
+                                <br><label id="yearLabel" for="year-input"></label>
+                            </span>
+                    </div>
+                    <input type="range" id="year-slider" min="2000" step="1">
+                    <div class="range-text">
+                        <p>2000</p>
+                        <p id="last-range-year"></p>
+                    </div>
+                </div>
+                <div class="footer-container">
+                    <div class="footer">
+                        <p id="lost-money-text"></p>
+                        <p id="lost-money">0 EUR</p>
+                    </div>
+                    <div class="footer">
+                        <p id="current-money-text"></p>
+                        <p id="current-money">0 EUR</p>
+                    </div>
+                </div>
+            </div>
+            <div class="breakup">
+                <p>*Geld, das Sie auf einem Girokonto, Sparkonto oder zu Hause aufbewahrt haben, mit einem jährlichen Zinssatz von 0%</p>
+                <p>**Durch steigende Preise sinkt der Wert Ihres Geldes – es bleibt im Gegensatz zu früher weniger in Ihrer Geldbörse oder am Girokonto übrig.</p>
+                <p id="real-data-text"></p>
+            </div>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/70c98ba864.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
